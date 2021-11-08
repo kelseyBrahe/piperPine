@@ -1,0 +1,224 @@
+
+
+.container-fluid {
+    max-width: 100%;
+    max-height: 100%;
+    height: fit-content;
+    width: 100%;
+    z-index: 1;
+    font-family: 'Zen Maru Gothic', sans-serif;
+    padding: 0;
+    margin:0;
+}
+
+#header-row {
+    padding:0;
+    margin:0;
+}
+
+.header {
+    max-width: 100%;
+    width: 100vw;
+    height: 30vh;
+    background: rgba(3, 20, 3);
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    object-fit: cover;
+}
+
+h1.title {
+    padding: 0;
+    display: flex;
+    margin: auto;
+    color: #FEF9EF;
+    font-size: 4rem;
+    font-weight: 300;
+}
+
+.segment > h2 {
+    margin-top: 2vh;
+    max-width: 100%;
+    position: relative;
+    font-weight: 700;
+    font-size: 2rem;
+    font-family: 'Playfair Display', serif;
+    display: flex;
+    width: 30vw;
+    margin-left: 10%;
+    flex-wrap: wrap;
+    color: rgba(3, 20, 3);
+}
+
+.row.first {
+    margin: 0;
+    max-width: 100%;
+    height: fit-content;
+    position: relative;
+}
+
+
+#emphasised {
+    color: #FEF9EF;
+    background-color: rgb(168, 79, 6);
+    width: 100%;
+    padding-left: 2.1vw;
+    margin-left: -5vw;
+}
+
+#image-div {
+    position: relative;
+    height: fit-content;
+    max-width: 100%;
+    width: 100%;
+    overflow: visible;
+}
+
+#pines {
+    height: fit-content;
+    transform: scaleX(-1);
+    position: relative;
+    width:100%;
+}
+
+#pine {
+    position: absolute;
+    width: 50%;
+    top: 10%;
+    right: -2%;
+}
+
+.row.second {
+    padding: 5%;
+}
+
+@media (max-width: 400px){
+
+    .segment {
+        margin-bottom: 0;
+    }
+
+    .segment > h2 {
+        width: 80vw;
+        font-size: 1.5rem;
+    }
+
+    h1.title {
+        font-size: 3rem;
+    }
+
+    #emphasised {
+        margin-left: -13vw;
+    }
+
+    #pines {
+        margin-top: -10%;
+        width: 100%;
+        left: 5%;
+        margin-bottom: 20%;
+    }
+
+    #pine {
+        margin-top: -10%;
+        width: 40%;
+        top: 30%;
+        right: 5%;
+        margin-bottom: 20%;
+    }
+    
+}
+
+@media (max-width: 660px) and (min-width: 401px){
+    .segment {
+        padding-top: 10%;
+    }
+
+    .segment > h2 {
+        width: 80vw;
+        font-size: 1.5rem;
+    }
+
+    h1.title {
+        font-size: 3rem;
+    }
+
+    #emphasised {
+        margin-left: -10vw;
+    }
+
+    #pines {
+        margin-top: -15%;
+        width: 100%;
+        left: 10%;
+    }
+
+    #pine {
+        margin-top: -15%;
+        width: 40%;
+        top: 25%;
+        right: 0%;
+    }
+
+}
+
+@media (max-width: 900px) and (min-width: 601px){
+    .segment {
+        padding-left: 10%;
+        margin-bottom:0;
+    }
+
+    .segment > h2 {
+        width: 60vw;
+    }
+
+    #emphasised {
+        margin-left: -7vw;
+    }
+
+    #pines {
+        margin-top: -10%;
+        width: 70%;
+        left: 15%;
+        bottom: 30%;
+    }
+
+    #pine {
+        margin-top: -10%;
+        width: 30%;
+        top: 10%;
+        right: 10%;
+    }
+
+}
+
+@media (max-width: 1200px) and (min-width: 901px){
+    .segment {
+        position: relative;
+        z-index: 2;
+        padding-left: 12%;
+        margin-bottom: 0;
+        height: fit-content;
+    }
+    .segment > h2 {
+        width: 60vw;
+    }
+
+    #emphasised {
+        margin-left: -5.5vw;
+    }
+
+    #pines {
+        margin-top: -10%;
+        width: 70%;
+        left: 15%;
+    }
+
+    #pine {
+        margin-top: -10%;
+        width: 30%;
+        top: 5%;
+        right: 10%;
+    }
+}
+
+

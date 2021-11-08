@@ -1,1 +1,313 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --header-overlay-color: rgba(0, 0, 0, 0.2);
+    --bold-hue: rgb(168, 79, 6);
+    --title-font: 'Comorant Unicase', serif;
+    --body-font: 'Montserrat', sans-serif;
+    --overlay-color: rgba(3, 20, 3);
+    --menu-speed: 0.75s;
+    --primary-color: transparent;
+    --menu-color: rgb(168, 79, 6);
+    --hover-color: #FEF9EF;
+    --logo-font: 'Comorant Unicase', serif;
+
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    max-width: 100%;
+    max-height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: var(--logo-font);
+    line-height: 1.4;
+    background-color: #FBFBFB;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+.menu-wrap {
+    position: fixed;
+    top: 0;
+    left:0;
+    z-index: 4;
+}
+
+.menu-wrap .toggler {
+    position: absolute;
+    top: 0;
+    left:0;
+    z-index: 5;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+}
+
+.menu-wrap .hamburger {
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 4;
+    width: 60px;
+    height: 60px;
+    padding: 1rem;
+    background: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* hamburger lines */
+
+.menu-wrap .hamburger > div {
+    position: relative;
+    height: 2px;
+    width: 100%;
+    background-color: #FEF9EF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+    
+}
+
+.menu-wrap .hamburger > div:before,
+.menu-wrap .hamburger > div:after {
+    content: '';
+    position: absolute;
+    z-index: 4;
+    top: -10px;
+    width: 100%;
+    height: 2px;
+    background-color: inherit;
+    transition: all 0.4s ease;
+}
+
+.menu-wrap .hamburger > div:after {
+    top: 10px;
+}
+
+/* toggle hamburger */
+
+.menu-wrap .toggler:checked + .hamburger > div {
+    background-color: var(--primary-color);
+    z-index: 5;
+}
+
+/* turn lines into X */
+
+.menu-wrap .toggler:checked + .hamburger > div:before{
+    background-color: var(--menu-color);
+    top: 50%;
+    transform: rotate(45deg);
+    
+}
+
+.menu-wrap .toggler:checked + .hamburger > div:after {
+    background-color:var(--menu-color);
+    top: 50%;
+    transform: rotate(-45deg);
+}
+
+/* do something on hover */
+.menu-wrap .toggler:checked:hover + .hamburger > div:before {
+    transform: rotate(0deg);
+    
+}
+
+.menu-wrap .toggler:checked:hover + .hamburger > div:after {
+    transform: rotate(0deg);
+    
+}
+
+.menu-wrap .toggler:checked ~ .menu > div > div > ul > li > a:hover {
+    color: var(--hover-color);
+}
+
+/* show menu */
+
+.menu-wrap .toggler:checked ~ .menu {
+    visibility: visible;
+}
+
+.menu-wrap .toggler:checked ~ .menu > div {
+    transform: scaleY(1);
+    transition-duration: var(--menu-speed);
+}
+
+.menu-wrap .toggler:checked ~ .menu > div > div {
+    opacity: 1;
+    transition: opacity 0.4s ease;
+}
+
+.menu-wrap .toggler:checked ~ .menu > div > div > ul > li {
+    transform: scaleY(1);
+}
+
+.menu-wrap .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu-wrap .menu > div {
+    background: var(--overlay-color);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    transform: scaleY(0);
+    transition: all 0.4s ease;
+    transform-origin: top left;
+}
+
+.menu-wrap .menu > div > div {
+    text-align: center;
+    max-width: 90vw;
+    max-height: 100vh;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.menu-wrap .menu > div > div > ul > li {
+    list-style: none;
+    color: var(--menu-color);
+    font-size: 1.5rem;
+    padding: 1rem;
+    transform: scaleY(0);
+    transition: all 0.4s ease;
+    transform-origin: left;
+}
+
+.menu-wrap .menu > div > div > ul > li > a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.4s ease;
+}
+
+.navHr {
+    background-color: var(--menu-color);
+}
+
+.button {
+    margin-top: 8%;
+    padding: 3%;
+    border: 1px solid var(--bold-hue);
+    background-color: var(--bold-hue);
+    color: white;
+    font-size: 25px; 
+    width: fit-content;
+}
+
+.bold {
+    background-color: rgb(248, 244, 230);
+    margin: 2%;
+    padding: 0;
+}
+
+.segment {
+    min-height: fit-content;
+    width: 100%;
+    padding-top: 5%;
+    padding-right: 1%;
+    padding-left: 1%;
+    margin-bottom: 5%;
+}
+
+.text-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    padding: 5%;
+}
+
+.text-div h5 {
+    padding-bottom: 5%;
+}
+
+.text-div h3 {
+    line-height: 1.6;
+}
+
+.image-div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-div img {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    align-self: center;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.fade-in-element {
+    transition: 2.5s;
+}
+
+.fade-up-element {
+    animation: ease-in-out;
+    transition: 1.5s;
+    transform: translateY(-10%);
+    margin-right: 0;
+}
+
+.fade-down-element {
+    animation: ease-in-out;
+    transition: 2.5s;
+    transform: translateY(5%);
+}
+
+.fade-right {
+    animation: ease-in-out;
+    transition: 2.5s;
+    transform: translateX(40px);
+}
+
+.fade-left {
+    animation: ease-in-out;
+    transition: 2.5s;
+    transform: translateX(-40px);
+}
+
+.row {
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background-color:transparent;
+    display: flex;
+}
+
+@media (max-width: 1000px) {
+    .logo a {
+        font-size: 20px;
+    }
+}
