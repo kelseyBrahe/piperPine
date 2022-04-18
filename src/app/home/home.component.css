@@ -1,4 +1,11 @@
-
+@keyframes highlight {
+    0% {
+        background-position: 0%;
+    }
+    100%{
+        background-position: -100%;
+    }
+}
 
 .container-fluid {
     max-width: 100%;
@@ -36,20 +43,6 @@ h1.title {
     font-weight: 300;
 }
 
-.segment > h2 {
-    margin-top: 2vh;
-    max-width: 100%;
-    position: relative;
-    font-weight: 700;
-    font-size: 2rem;
-    font-family: 'Playfair Display', serif;
-    display: flex;
-    width: 30vw;
-    margin-left: 10%;
-    flex-wrap: wrap;
-    color: rgba(3, 20, 3);
-}
-
 .row.first {
     margin: 0;
     max-width: 100%;
@@ -57,16 +50,40 @@ h1.title {
     position: relative;
 }
 
+.segment {
+    margin: auto;
+}
+
+.segment > h2 {
+    margin-top: 2vh;
+    max-width: 100%;
+    position: relative;
+    font-weight: 500;
+    font-size: 2rem;
+    font-family: 'Playfair Display', serif;
+    display: flex;
+    flex-wrap: wrap;
+    color: rgba(3, 20, 3);
+    padding-left: 10%;
+    padding-right: 10%;
+}
 
 #emphasised {
     color: #FEF9EF;
-    background-color: rgb(168, 79, 6);
     width: 100%;
-    padding-left: 2.1vw;
-    margin-left: -5vw;
+    margin-top: 4%;
+    padding-bottom: 2%;
+    padding-top: 1%;
+    padding-left: 3%;
+    margin-left: -3%;
+    background: linear-gradient(to right,transparent 50%, rgb(168, 79, 6) 50%);
+    background-size: 200%;
+    animation: 2.5s ease-in-out 0.5s 1 highlight;
+    animation-fill-mode: forwards;
+    width: 110%;
 }
 
-#image-div {
+.image-div {
     position: relative;
     height: fit-content;
     max-width: 100%;
@@ -88,18 +105,102 @@ h1.title {
     right: -2%;
 }
 
-.row.second {
-    padding: 5%;
+#parentRow {
+    background-color: rgba(3, 20, 3);
+    color: #FEF9EF;
+    margin-bottom: 5%;
+}
+
+#second {
+    margin-top: 10vh;
+}
+
+.row.second, .row.third {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    align-items: center;
+}
+
+.row.second > div > h2 {
+    font-weight: 400;
+    font-family: 'Playfair Display', serif;
+    border-bottom: 1px solid rgb(168, 79, 6);;
+    padding-bottom: 1%;
+    width: 80vw;
+    margin: auto;
+    margin-top: 5vh;
+}
+
+.third > div {
+    margin-top: 3vh;
+    padding-left: 20%;
+    padding-right: 20%;
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 10%;
+    margin-left: -40px;
+}
+
+.third > div > h3 {
+    font-size: 1.7rem;
+    font-weight: 400;
+    margin-bottom: 5%;
+    font-family: 'Playfair Display', serif;
+}
+
+div.row.fourth {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#pinecone {
+    width: 60vw;
+    margin-top: 5%;
+}
+
+.row.fourth > h1 {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: 80%;
+    padding-bottom: 1%;
+    border-bottom: solid 1px rgb(168, 79, 6);
+}
+
+.gif {
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.gif > img {
+    margin: auto;
+    width: 30vw;
+    padding: 2%;
+}
+
+.row.sixth, .row.fifth {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
 }
 
 @media (max-width: 400px){
 
     .segment {
+        text-align: center;
+        margin-top: 5%;
         margin-bottom: 0;
     }
 
     .segment > h2 {
-        width: 80vw;
         font-size: 1.5rem;
     }
 
@@ -108,13 +209,13 @@ h1.title {
     }
 
     #emphasised {
-        margin-left: -13vw;
+        margin-left: 0;
     }
 
     #pines {
         margin-top: -10%;
         width: 100%;
-        left: 5%;
+        left: 10%;
         margin-bottom: 20%;
     }
 
@@ -122,8 +223,14 @@ h1.title {
         margin-top: -10%;
         width: 40%;
         top: 30%;
-        right: 5%;
+        right: 0%;
         margin-bottom: 20%;
+    }
+
+    .gif > img {
+        margin: auto;
+        width: 60vw;
+        padding: 2%;
     }
     
 }
@@ -131,54 +238,63 @@ h1.title {
 @media (max-width: 660px) and (min-width: 401px){
     .segment {
         padding-top: 10%;
+        text-align: center;
     }
 
     .segment > h2 {
-        width: 80vw;
-        font-size: 1.5rem;
+        font-size: 2rem;
+    }
+
+    #emphasised {
+        margin-left: 0;
     }
 
     h1.title {
         font-size: 3rem;
     }
 
-    #emphasised {
-        margin-left: -10vw;
-    }
-
     #pines {
         margin-top: -15%;
         width: 100%;
-        left: 10%;
+        left: 5%;
     }
 
     #pine {
         margin-top: -15%;
         width: 40%;
         top: 25%;
-        right: 0%;
+        right: -5%;
+    }
+
+    .gif > img {
+        margin: auto;
+        width: 60vw;
+        padding: 2%;
     }
 
 }
 
 @media (max-width: 900px) and (min-width: 601px){
     .segment {
+        margin-top: 5%;
+        margin-bottom: 0;
+        text-align: center;
         padding-left: 10%;
-        margin-bottom:0;
+        padding-right: 10%;
     }
 
     .segment > h2 {
-        width: 60vw;
+        font-size: 1.8rem;
     }
 
     #emphasised {
-        margin-left: -7vw;
+        margin-left: 0;
     }
 
     #pines {
         margin-top: -10%;
         width: 70%;
-        left: 15%;
+        left: 0%;
         bottom: 30%;
     }
 
@@ -186,38 +302,49 @@ h1.title {
         margin-top: -10%;
         width: 30%;
         top: 10%;
-        right: 10%;
+        right: 12%;
+    }
+
+    .gif > img {
+        margin: auto;
+        width: 60vw;
+        padding: 2%;
     }
 
 }
 
 @media (max-width: 1200px) and (min-width: 901px){
     .segment {
+        margin-top: 5%;
         position: relative;
         z-index: 2;
-        padding-left: 12%;
         margin-bottom: 0;
         height: fit-content;
+        text-align: center;
+        padding-left: 20%;
+        padding-right: 20%;
+        font-size: 2.2rem;
     }
-    .segment > h2 {
-        width: 60vw;
+
+    #second-line {
+        margin-top: 2%;
     }
 
     #emphasised {
-        margin-left: -5.5vw;
+        margin-left: 0;
     }
 
     #pines {
         margin-top: -10%;
         width: 70%;
-        left: 15%;
+        left: 0%;
     }
 
     #pine {
         margin-top: -10%;
         width: 30%;
         top: 5%;
-        right: 10%;
+        right: 8%;
     }
 }
 
